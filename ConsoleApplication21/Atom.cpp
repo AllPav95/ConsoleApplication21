@@ -4,8 +4,8 @@
 Atom::Atom(const std::string& symbol, int atomicNumber, int neutrons, int nucleusCharge)
     : symbol(symbol), atomicNumber(atomicNumber), neutrons(neutrons), nucleusCharge(nucleusCharge) {}
 
-const std::string& Atom::getSymbol() const {
-    return symbol;
+Atom Atom::operator+(const Atom& other) const {
+    return Atom(symbol + other.symbol, atomicNumber + other.atomicNumber, neutrons + other.neutrons, nucleusCharge + other.nucleusCharge);
 }
 
 int Atom::getAtomicNumber() const {
@@ -21,8 +21,15 @@ int Atom::getNucleusCharge() const {
 }
 
 void Atom::printInfo() const {
-    std::cout << "Symbol: " << symbol << std::endl;
-    std::cout << "Atomic Number: " << atomicNumber << std::endl;
-    std::cout << "Neutrons: " << neutrons << std::endl;
-    std::cout << "Nucleus Charge: " << nucleusCharge << std::endl;    
+    std::cout << "Symbol: " << symbol << "\n";
+    std::cout << "Atomic Number: " << atomicNumber << "\n";
+    std::cout << "Neutrons: " << neutrons << "\n";
+}
+
+std::ostream& operator<<(std::ostream& os, const Atom& atom) {
+    os << "Symbol: " << atom.symbol << "\n";
+    os << "Atomic Number: " << atom.atomicNumber << "\n";
+    os << "Neutrons: " << atom.neutrons << "\n";
+    return os;
+
 }

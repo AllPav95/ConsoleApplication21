@@ -40,5 +40,10 @@ int main() {
     potassium.printInfo();   
     std::cout << std::endl;
 
+    Molecule combined = water + glucose;
+
+    combined.printInfo();
+
+
     return 0;
 }
