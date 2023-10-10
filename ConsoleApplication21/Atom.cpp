@@ -4,8 +4,25 @@
 Atom::Atom(const std::string& symbol, int atomicNumber, int neutrons, int nucleusCharge)
     : symbol(symbol), atomicNumber(atomicNumber), neutrons(neutrons), nucleusCharge(nucleusCharge) {}
 
+bool Atom::operator==(const Atom& other) const {
+    return (symbol == other.symbol &&
+        atomicNumber == other.atomicNumber &&
+        neutrons == other.neutrons &&
+        nucleusCharge == other.nucleusCharge);
+}
+
+bool Atom::operator!=(const Atom& other) const {
+    return !(*this == other);
+}
+
+
 Atom Atom::operator+(const Atom& other) const {
     return Atom(symbol + other.symbol, atomicNumber + other.atomicNumber, neutrons + other.neutrons, nucleusCharge + other.nucleusCharge);
+}
+
+const std::string& Atom::getSymbol() const
+{
+    return symbol;
 }
 
 int Atom::getAtomicNumber() const {

@@ -18,6 +18,13 @@ void Molecule::setName(const std::string& name) {
 
 #pragma endregion
 
+bool Molecule::operator==(const Molecule& other) const {
+    return (name == other.name && atoms == other.atoms);
+}
+
+bool Molecule::operator!=(const Molecule& other) const {
+    return !(*this == other);
+}
 
 Molecule Molecule::operator+(const Molecule& other) const {
     Molecule result(name + other.name);

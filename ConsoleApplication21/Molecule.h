@@ -9,6 +9,9 @@ public:
     Molecule();
     Molecule(const std::string& name);
 
+    bool operator==(const Molecule& other) const;
+    bool operator!=(const Molecule& other) const;
+
 #pragma region GettersAndSetters
 
     const std::string& getName() const;
