@@ -44,6 +44,19 @@ int main() {
 
     combined.printInfo();
 
+    if (water == glucose) {
+        std::cout << "Water is equal to Glucose." << std::endl;
+    }
+    else {
+        std::cout << "Water is not equal to Glucose." << std::endl;
+    }
+
+    if (combined != water) {
+        std::cout << "Combined is not equal to Water." << std::endl;
+    }
+    else {
+        std::cout << "Combined is equal to Water." << std::endl;
+    }
 
     return 0;
 }

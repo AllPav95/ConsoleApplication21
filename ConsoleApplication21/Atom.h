@@ -10,12 +10,16 @@ public:
     Atom operator+(const Atom& other) const;
 
     const std::string& getSymbol() const;
+
     int getAtomicNumber() const;
     int getNeutrons() const;
     int getNucleusCharge() const;
    
     void printInfo() const;
     friend std::ostream& operator<<(std::ostream& os, const Atom& atom);
+
+    bool operator==(const Atom& other) const;
+    bool operator!=(const Atom& other) const;
 
 private:
     std::string symbol;       
