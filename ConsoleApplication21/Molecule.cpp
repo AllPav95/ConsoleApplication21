@@ -47,3 +47,24 @@ void Molecule::printInfo() const {
         std::cout << "----------------------" << std::endl;
     }
 }
+
+Atom& Molecule::operator[](size_t index)
+{   
+    if (index < atoms.size()) {
+        return atoms[index];
+}else {
+     static Atom defaultAtom("Default", 0, 0);
+     return defaultAtom;
+    }
+}
+
+const Atom& Molecule::operator[](size_t index) const
+{
+    if (index < atoms.size()) {
+    return atoms[index];
+}
+else {
+    static const Atom defaultAtom("Default", 0, 0);
+    return atoms.front();
+    }
+}

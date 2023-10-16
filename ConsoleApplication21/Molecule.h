@@ -24,6 +24,9 @@ public:
     void addAtom(const Atom& atom);
     void printInfo() const;
 
+    Atom& operator[](size_t index);
+
+    const Atom& operator[](size_t index) const;
 private:
     std::string name;         
     std::vector<Atom> atoms;  
